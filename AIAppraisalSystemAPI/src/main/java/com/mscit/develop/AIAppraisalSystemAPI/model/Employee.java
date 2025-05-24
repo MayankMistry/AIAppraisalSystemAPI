@@ -1,6 +1,6 @@
 package com.mscit.develop.AIAppraisalSystemAPI.model;
 
-import java.util.Set;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -48,6 +49,7 @@ public class Employee {
         private String employeeDob;
         @Column(name = "employee_type")
         private String employeeType;
-        @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
-        private Set<Address> addressList;
+        @OneToMany(cascade = CascadeType.ALL)
+        @JoinColumn(name = "fk_emp_id", referencedColumnName = "empId")
+        private List<Address> addressList;
 }
