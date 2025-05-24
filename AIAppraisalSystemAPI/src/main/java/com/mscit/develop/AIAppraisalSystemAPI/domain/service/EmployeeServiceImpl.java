@@ -11,7 +11,10 @@ import com.mscit.develop.AIAppraisalSystemAPI.domain.EmployeeService;
 //import com.mscit.develop.AIAppraisalSystemAPI.exception.EmployeeNotFoundException;
 import com.mscit.develop.AIAppraisalSystemAPI.model.Employee;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class EmployeeServiceImpl {
 
      @Autowired
@@ -38,7 +41,7 @@ public class EmployeeServiceImpl {
      }
 
      public Employee createEmployee(Employee employee) {
-
+          log.info("employee {}", employee.toString());
           return employeeService.save(employee);
      }
 

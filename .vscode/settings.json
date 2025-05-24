@@ -1,0 +1,15 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.import.maven.offline.enabled": true,
+    "maven.excludedFolders": [
+        "**/.*",
+        "**/node_modules",
+        "**/target",
+        "**/bin",
+        "**/archetype-resources"
+    ],
+    "java.maven.downloadSources": false,
+    "java.project.outputPath": "",
+    "maven.terminal.useJavaHome": true,
+    "maven.executable.preferMavenWrapper": true
+}

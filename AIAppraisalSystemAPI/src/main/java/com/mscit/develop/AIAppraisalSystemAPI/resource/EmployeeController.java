@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mscit.develop.AIAppraisalSystemAPI.domain.AddressService;
 import com.mscit.develop.AIAppraisalSystemAPI.domain.service.EmployeeServiceImpl;
 import com.mscit.develop.AIAppraisalSystemAPI.model.Employee;
 
@@ -22,6 +23,9 @@ public class EmployeeController {
 
      @Autowired
      private EmployeeServiceImpl employeeServiceImpl;
+
+     @Autowired
+     private AddressService addressService;
 
      @GetMapping("/find-employee/{empId}")
      public ResponseEntity<Optional<Employee>> getEmployeeById(@PathVariable(name = "empId") String empId) {
