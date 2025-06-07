@@ -49,6 +49,8 @@ public class Employee {
         private String employeeDob;
         @Column(name = "employee_type")
         private String employeeType;
+        @Column(name = "managerUserName")
+        private String managerUserName;
         @OneToMany(cascade = CascadeType.ALL)
         @JoinColumn(name = "fk_emp_id", referencedColumnName = "empId")
         private List<Address> addressList;

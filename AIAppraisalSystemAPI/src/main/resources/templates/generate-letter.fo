@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Antenna House : AH Formatter Sample -->
+<fo:root xml:lang="en" font-family="serif" font-size="10pt" line-height="1.4" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:axf="http://www.antennahouse.com/names/XSL/Extensions" xmlns:s="http://www.antennahouse.com/names/XSL/Sample">
+<fo:layout-master-set>
+<fo:simple-page-master page-height="297mm" page-width="210mm" margin-top="10mm" margin-left="20mm" margin-right="20mm" margin-bottom="10mm" master-name="PageMaster1">
+<fo:region-body margin-top="0mm" margin-left="0mm" margin-right="0mm" margin-bottom="10mm" />
+<fo:region-after extent="7mm" />
+</fo:simple-page-master>
+</fo:layout-master-set>
+  <fo:page-sequence master-reference="PageMaster1">
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:block font-size="0.8em" text-align="right" color="green">
+      </fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body" hyphenate="true">
+      <fo:block span="all" font-family="sans-serif" font-size="2em" font-weight="bold" padding-before="0.3em" padding-after="0.3em" space-before="1em" space-after="1em" space-before.conditionality="retain" space-after.conditionality="retain" background-color="#EEEEEE" hyphenate="false" line-height-shift-adjustment="disregard-shifts">
+        <fo:block start-indent="8em" end-indent="8em">
+          Appraisal Letter
+        </fo:block>
+      </fo:block>
+      <fo:block th:text="'Dear ' + ${FIRSTNAME} + ' ' + ${LASTNAME} + ','" span="all" space-before="1em" space-after="1em" space-after.conditionality="retain" text-indent="0em" start-indent="0.5em" end-indent="0.5em" padding="0.5em" text-align="justify" line-height-shift-adjustment="disregard-shifts"/>
+        <fo:block text-align="justify">
+          <fo:block space-after="7mm">
+            <fo:block th:text="'I am delighted to inform you that you have bee awarded with performance grade ' + ${GRADE} + ' for financial Year FY ' + ${FINANCIALYEAR}"/>
+            <fo:block th:text="'and effective from ' + ${EFFECTIVEDATE} + '.'"/>
+            <fo:block>
+                This change is a result of your excellent performance and commitment to our team and organization.
+            </fo:block>
+          </fo:block>
+          <fo:block space-after="7mm">
+              <fo:block>
+                Your hard work and dedication do not go unnoticed, and we believe this adjustment is
+              </fo:block>
+              <fo:block>
+                well-deserved. We look forward to your continued contributions in the future.
+              </fo:block>
+          </fo:block>
+          <fo:block space-after="7mm">
+              <fo:block font-weight="bold" space-after="2mm">
+                Congratulations, and thank you for your valuable contributions.
+              </fo:block>
+          </fo:block>
+          <fo:block space-after="7mm">
+              <fo:block>
+                Thank You,
+              </fo:block>
+              <fo:block>
+                Appraisal Management Team
+              </fo:block>
+          </fo:block>
+        </fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+</fo:root>
